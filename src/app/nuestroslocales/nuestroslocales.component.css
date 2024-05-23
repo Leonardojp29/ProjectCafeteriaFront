@@ -1,0 +1,186 @@
+.carousel-principal{
+  margin-top:-48px;
+
+}
+
+.carousel-item {
+  position: relative; /* Establece posición relativa para que los elementos absolutos sean relativos a esto */
+}
+
+.texto-principal-carousel {
+  position: absolute; /* Posición absoluta */
+  top: 50%; /* Posiciona el texto en la mitad vertical del elemento */
+  left: 50%; /* Posiciona el texto en la mitad horizontal del elemento */
+  transform: translate(-50%, -50%); /* Centra el texto en el medio */
+  font-size: 24px; /* Tamaño de letra */
+  background-color: rgba(255, 0, 0, 0.3); /* Color de fondo rojo transparente */
+  padding: 10px; /* Añade espaciado dentro del borde */
+  border: 2px solid white; /* Borde cuadrado rojo */
+  border-radius: 5px; /* Borde redondeado (opcional) */
+  color: white; /* Color del texto */
+}
+
+.head-parrafo {
+  color: #d5ba7f;
+  font-size: 25px;
+  animation: backInRight;
+  animation-duration: 2s;
+  font-style: italic;
+  font-family: sans-serif;
+}
+  .line {
+    width: 200px;
+    height: 2px;
+    background-color: #d5ba7f;
+    border: solid 1px #d5ba7f;
+    margin: 0 20px;
+  }
+  .separator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+  }
+  .separator h2{
+    color: red;
+  }
+  .table {
+    margin: 0 auto; 
+    width: 50%; 
+    border-collapse: collapse; 
+  }
+  .descripcion {    
+    height: 100px; 
+    text-align: center;
+    color: #000000; /* Color del texto */
+    padding-top: 30px; /* Espacio para el texto */
+    margin-bottom: 50px; /* Espacio debajo de la sección */
+    margin-left: 100px;
+    margin-right: 100px;
+    animation: backInRight;
+    animation-duration: 2s;
+  }
+  .section-background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../../assets/img/Fondo.PNG");
+    background-size: 1280px 284px;
+    background-repeat: no-repeat;
+    height: 284px;
+  }
+  .image-container {
+    width: 215px; /* Ancho de las imágenes */
+    height: 215px; /* Alto de las imágenes */
+    background-size: cover; /* Ajustar la imagen al contenedor */
+    border-radius: 50%; /* Forma circular */
+    border: 4px solid #f7a611; /* Borde dorado */
+    margin-bottom: 20px; /* Espacio entre imágenes */
+    margin-left: 100px; /* Margen a la izquierda para separar del borde izquierdo */
+    position: relative;
+    overflow: hidden;    
+  }
+  .image-container::before {
+    content: ''; /* Crea un pseudo-elemento para la capa de sombra */
+    position: absolute; /* Posición absoluta sobre la imagen */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0); /* Color de la sombra transparente por defecto */
+    transition: background-color 0.3s ease; /* Transición suave del color */
+  }
+  
+ 
+.image-text {
+  margin-top: 10px; /* Espacio entre la imagen y el texto */
+  font-size: 20px; /* Tamaño de fuente del texto */
+  color: #f7a611; /* Color del texto */
+  text-align: center;
+  
+}
+/* Estilos para la sección de Destacados */
+.destacados-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 200px;
+  }
+  
+  /* Estilos para el contenedor de la imagen */
+  .imagen-destacada {
+    width: 600px;
+    height: 700px;
+    background-size: cover;
+    background-position: center;
+    background-image: url('../../assets/img/destacados.jpg'); /* Ruta de la imagen */
+    margin-left: 100px;
+  }
+  
+  /* Estilos para el texto destacado */
+  .texto-destacado {
+    max-width: 30%; /* Ancho máximo para el texto */
+    margin: 0 auto; /* Centrar el contenedor */
+    margin-top: 50px; /* Espacio desde el texto anterior */
+    text-align: justify; /* Alinear texto justificado */
+    animation: backInRight;
+    animation-duration: 2s;
+  }
+  .tituloDestacado {    
+    height: 100px; 
+    text-align: center;
+    color: #f7a611; /* Color del texto */
+    padding-top: 30px; /* Espacio para el texto */
+    animation: backInRight;
+    animation-duration: 2s;
+    
+  }
+  /* Estilos para el botón "Conoce más" */
+.conoce-mas {
+    text-align: center;
+    margin-top: 50px; /* Espacio desde el texto anterior */
+  }
+  
+  .btn-conoce-mas {
+    display: block; /* Cambiar a bloque para ocupar toda la anchura disponible */
+    margin: 20px auto; /* Margen superior e inferior de 20px y centrar horizontalmente */
+    padding: 10px 20px; /* Espaciado interno del botón */
+    border: 2px solid #f7a611; /* Borde con color mostaza */
+    border-radius: 50px; /* Forma ovalada */
+    text-decoration: none;
+    color: #f7a611; /* Color del texto */
+    transition: background-color 0.3s, color 0.3s;
+    max-width: 200px; /* Ancho máximo para el botón */
+  }
+  
+  
+  .btn-conoce-mas:hover {
+    background-color: #f7a611; /* Fondo mostaza al pasar el mouse */
+    color: white; /* Color del texto al pasar el mouse */
+  }
+  .footer {
+    background-color: #333;
+    color: white;
+    padding: 40px 0;
+  }
+  
+  .footer h5 {
+    color: #d5ba7f;
+  }
+  
+  .footer ul li {
+    list-style: none;
+    margin-bottom: 10px;
+  }
+  
+  .footer a {
+    color: white;
+  }
+  
+  .footer a:hover {
+    color: #d5ba7f;
+  }
+  
+  
+  

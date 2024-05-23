@@ -1,0 +1,71 @@
+<br><br>
+<div class="container py-2">
+  <div class="row text-center align-items-center">
+    <div class="head-parrafo">
+      <p>LISTADO DE PRODUCTOS DE NUESTRO MENU</p>
+    </div>
+  </div>
+</div>
+<div class="container py-5 text-center">
+  <a class="btn btn-secondary btn-custom" [routerLink]="'/registrar-menu'">
+    Agregar un nuevo Producto para el Menu
+  </a>
+</div>
+<div class="container text-center search-container">
+  <span class="search-label">Buscar Producto:</span>
+  <input type="text" matInput (keyup)="applyFilter($event)" placeholder="Nombre del Producto">
+</div>
+<div class="table-container">
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" class="table table-hover">
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef>ID</th>
+        <td mat-cell *matCellDef="let dato">{{dato.id}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="nombre">
+        <th mat-header-cell *matHeaderCellDef>Nombre</th>
+        <td mat-cell *matCellDef="let dato">{{dato.nombre}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="categoria">
+        <th mat-header-cell *matHeaderCellDef>Categoría</th>
+        <td mat-cell *matCellDef="let dato">{{ getNombreCategoria(dato.idcategoria) }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="precio">
+        <th mat-header-cell *matHeaderCellDef>Precio</th>
+        <td mat-cell *matCellDef="let dato">S/{{dato.precio}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="descripcion">
+        <th mat-header-cell *matHeaderCellDef>Descripción</th>
+        <td mat-cell *matCellDef="let dato">{{dato.descripcion}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="imagen">
+        <th mat-header-cell *matHeaderCellDef>Imagen Referencial</th>
+        <td mat-cell *matCellDef="let dato">
+          <div *ngIf="dato.imagen">
+            <img [src]="dato.imagen" alt="{{ dato.nombre }}" class="img-thumbnail img-small">
+          </div>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="acciones">
+        <th mat-header-cell *matHeaderCellDef colspan="3">Acciones</th>
+        <td mat-cell *matCellDef="let dato" colspan="3">
+          <button class="btn btn-info btn-separado" (click)="irActualizar(dato.id)">Actualizar</button>
+          <button class="btn btn-danger btn-separado" (click)="eliminarMenu(dato.id)">Eliminar</button>
+          <button class="btn btn-warning btn-separado" (click)="detalleMenu(dato.id)">Ver Detalle</button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns" class="mat-header-row"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator [pageSizeOptions]="pageSizeOptions" showFirstLastButtons></mat-paginator>
+  </div>
+</div>
+<br><br><br>
+<router-outlet></router-outlet>

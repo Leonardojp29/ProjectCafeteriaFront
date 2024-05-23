@@ -1,0 +1,38 @@
+<div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-body">
+            <div class="card-content">
+              <strong><h5 class="card-title text-center mb-4">ACTUALIZAR LOCALES</h5></strong>
+              <form (ngSubmit)="actualizarLocales()">              
+                <div class="mb-3">
+                  <strong><label for="IDdistrito" class="form-label centered-label">Distrito</label></strong>
+                  <select class="form-select" id="IDdistrito" name="IDdistrito" [(ngModel)]="locales.iddistrito" required>
+                      <option disabled [ngValue]="null">Seleccione un Distrito</option>
+                      <option *ngFor="let distrito of distrito" [value]="distrito.iddistrito">{{ distrito.nombre}}</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                    <strong><label for="direccion" class="form-label centered-label">Direccion *</label></strong>
+                    <input type="text" class="form-control" id="direccion" name="direccion" [(ngModel)]="locales.direccion" required>
+                </div>                
+                <div class="mb-3">
+                   <strong><label for="horario" class="form-label centered-label">Horario </label></strong>
+                   <input type="text" class="form-control" id="horario" name="horario" [(ngModel)]="locales.horario" required>
+                </div>                                                 
+                <div class="text-center">
+                   <button type="submit" class="btn btn-actualizar btn-custom">Actualizar Local</button>
+                   <button type="button" class="btn btn-primary btn-custom" (click)="regresar()">Regresar</button>                  
+                </div>              
+                <div *ngIf="errorActualizacion" class="alert alert-danger mt-3">
+                   {{ errorActualizacion }}
+                </div>
+                </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <router-outlet />

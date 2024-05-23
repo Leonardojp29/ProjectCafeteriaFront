@@ -1,0 +1,17 @@
+<div *ngIf="reserva" class="container">
+    <h2>Detalle de la Reserva</h2>
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Reserva ID: {{ reserva.id }}</h5>
+        <p class="card-text"><strong>Nombre:</strong> {{ reserva.nombre }}</p>
+        <p class="card-text"><strong>Correo:</strong> {{ reserva.correo }}</p>
+        <p class="card-text"><strong>Teléfono:</strong> {{ reserva.telefono }}</p>
+        <p class="card-text"><strong>Cantidad de Personas:</strong> {{ reserva.cantidad }}</p>
+        <p class="card-text"><strong>Fecha:</strong> {{ reserva.fecha }}</p>
+        <p class="card-text"><strong>Hora:</strong> {{ reserva.hora }}</p>
+        <p class="card-text"><strong>Mensaje:</strong> {{ reserva.mensaje }}</p>
+      </div>
+    </div>
+    <button class="btn btn-primary mt-3" (click)="back()">Volver</button>
+  </div>
+  

@@ -1,0 +1,51 @@
+<div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-body">
+            <div class="card-content">
+              <strong><h5 class="card-title text-center mb-4">ACTUALIZAR RESERVA</h5></strong>
+              <form (ngSubmit)="actualizarReserva()">              
+                <div class="mb-3">
+                  <strong><label for="nombre" class="form-label centered-label">Nombre para la Reserva *</label></strong>
+                  <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="reserva.nombre" required>
+                </div>
+                <div class="mb-3">
+                    <strong><label for="correo" class="form-label centered-label">Correo *</label></strong>
+                    <input type="text" class="form-control" id="correo" name="correo" [(ngModel)]="reserva.correo" required>
+                  </div>
+                  <div class="mb-3">
+                    <strong><label for="telefono" class="form-label centered-label">Telefono *</label></strong>
+                    <input type="text" class="form-control" id="telefono" name="telefono" [(ngModel)]="reserva.telefono" required>
+                  </div>
+                  <div class="mb-3">
+                    <strong><label for="cantidad" class="form-label centered-label">Cantidad *</label></strong>
+                    <input type="number" class="form-control" id="cantidad" min="1" name="cantidad" [(ngModel)]="reserva.cantidad" required>
+                  </div>
+                  <div class="mb-3">
+                    <strong><label for="fecha" class="form-label centered-label">Fecha *</label></strong>
+                    <input type="date" class="form-control" id="fecha" name="fecha" [(ngModel)]="reserva.fecha" required>
+                  </div>
+                  <div class="mb-3">
+                    <strong><label for="hora" class="form-label centered-label">Hora *</label></strong>
+                    <input type="time" class="form-control" id="hora" name="hora" [(ngModel)]="reserva.hora" required>
+                  </div>                
+                  <div class="mb-3">
+                    <strong><label for="mensaje" class="form-label centered-label">Mensaje </label></strong>
+                    <textarea class="form-control" id="mensaje" rows="3" name="mensaje" [(ngModel)]="reserva.mensaje" required></textarea>
+                  </div>                                                 
+                  <div class="text-center">
+                    <button type="submit" class="btn btn-actualizar btn-custom">Actualizar Producto</button>
+                    <button type="button" class="btn btn-primary btn-custom" (click)="regresar()">Regresar</button>                  
+                  </div>              
+                  <div *ngIf="errorActualizacion" class="alert alert-danger mt-3">
+                    {{ errorActualizacion }}
+                  </div>
+                </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <router-outlet />

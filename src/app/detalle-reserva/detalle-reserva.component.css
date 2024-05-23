@@ -1,0 +1,66 @@
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Para centrar verticalmente */
+}
+
+/* Título de la página */
+h2 {
+    margin-bottom: 2rem; /* Espaciado inferior del título */
+    color: #002041; /* Color del título */
+}
+
+/* Estilo de la tarjeta */
+.card {
+    width: 100%;
+    max-width: 450px; /* Ajusta el ancho máximo de la tarjeta */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para dar un efecto de elevación */
+    border-radius: 8px; /* Bordes redondeados */
+    overflow: hidden; /* Para que los bordes redondeados se apliquen correctamente */
+    background-color: #f1fffe; /* Fondo blanco para la tarjeta */
+    margin-bottom: 2rem; /* Espacio inferior de la tarjeta */
+}
+
+/* Estilo del cuerpo de la tarjeta */
+.card-body {
+    padding: 20px; /* Espaciado interno */
+}
+
+/* Título de la tarjeta */
+.card-title {
+    font-size: 1.5rem; /* Tamaño de fuente del título */
+    margin-bottom: 1rem; /* Espacio inferior del título */
+    color: #343a40; /* Color de texto */
+}
+
+/* Texto de la tarjeta */
+.card-text {
+    font-size: 1rem; /* Tamaño de fuente del texto */
+    margin-bottom: 0.75rem; /* Espacio inferior de los párrafos */
+    color: #6c757d; /* Color de texto */
+}
+
+.card-text strong {
+    color: #495057; /* Color de los títulos en negrita */
+}
+
+/* Botón de volver */
+.btn-primary {
+    background-color: #007bff; /* Color de fondo del botón */
+    border-color: #007bff; /* Color del borde del botón */
+    color: #ffffff; /* Color del texto del botón */
+    padding: 10px 20px; /* Espaciado interno del botón */
+    font-size: 1rem; /* Tamaño de fuente del botón */
+    border-radius: 4px; /* Bordes redondeados del botón */
+    text-transform: uppercase; /* Texto en mayúsculas */
+    transition: background-color 0.3s, border-color 0.3s; /* Transición para el cambio de color */
+    margin-bottom: 2rem; /* Espacio inferior del botón */
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Color de fondo del botón al pasar el ratón */
+    border-color: #0056b3; /* Color del borde del botón al pasar el ratón */
+}

@@ -1,0 +1,59 @@
+.background {
+  background-color: #e6fffb;
+}
+.head-parrafo {
+    color: #000a46;
+    animation: backInRight;
+    animation-duration: 2s;
+    font-style: italic;
+    font-family: sans-serif;
+    font-size: 30px;
+  }
+  .btn-custom {
+    background-color: #902729;
+    color: white;
+    transition: background-color 0.3s ease;
+    box-sizing: border-box;
+  }
+  
+  .btn-custom:hover {
+    background-color: #d5ba7f;
+  }
+  
+  .table-container {
+    margin: 0 auto; /* Centra la tabla */
+    max-width: 80%; /* Ajusta el ancho máximo de la tabla */
+  }
+  
+  .mat-elevation-z8 {
+    margin-top: 20px; /* Ajusta el margen superior */
+  }
+  
+  .mat-header-row {
+    background-color: #b3e5fc; /* Color de fondo celeste */
+    font-weight: bold; /* Texto en negrita */
+  }
+  
+  .mat-header-cell {
+    font-weight: bold; /* Texto en negrita para cada celda de encabezado */
+  }
+  
+  .btn-separado {
+    margin-right: 10px;
+  }
+  
+  .btn-separado:last-child {
+    margin-right: 0;
+  }
+
+  .search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px; /* Ajusta el margen inferior */
+  }
+  .search-label {
+    margin-right: 10px; /* Espacio entre el texto y el campo de entrada */
+    font-weight: bold; /* Texto en negrita */
+    color: #000a46;
+  }

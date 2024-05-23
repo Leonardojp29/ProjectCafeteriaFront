@@ -1,0 +1,16 @@
+<div *ngIf="menu" class="container">
+  <h2>Detalle del Producto del Menú</h2>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Producto ID: {{ menu.id }}</h5>
+      <p class="card-text"><strong>Nombre:</strong> {{ menu.nombre }}</p>
+      <p class="card-text"><strong>Categoría:</strong> {{ categoria }}</p>
+      <p class="card-text"><strong>Precio:</strong> S/{{ menu.precio }}</p>
+      <p class="card-text"><strong>Detalle:</strong> {{ menu.descripcion }}</p>
+      <div *ngIf="imagenUrl">
+        <img [src]="imagenUrl" alt="{{ menu.nombre }}" class="img-menu">
+      </div>
+    </div>
+  </div>
+  <button class="btn btn-primary" (click)="back()">Volver</button>
+</div>

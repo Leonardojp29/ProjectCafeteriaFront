@@ -1,0 +1,29 @@
+<div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-body">
+            <div class="card-content">
+              <strong><h5 class="card-title text-center mb-4">ACTUALIZAR CATEGORÍA</h5></strong>
+              <form (ngSubmit)="actualizarCategoria()">
+                <div class="mb-3">
+                  <strong><label for="nombre" class="form-label centered-label">Nombre de la Categoría *</label></strong>
+                  <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="categoria.nombre" required>
+                </div>
+                <div class="text-center">
+                  <button type="submit" class="btn btn-actualizar btn-custom">Actualizar Categoría</button>
+                  <button type="button" class="btn btn-primary btn-custom" (click)="regresar()">Regresar</button>
+                </div>
+                <br>
+                <div *ngIf="errorActualizacion" class="alert alert-danger mt-3">
+                  {{ errorActualizacion }}
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+  

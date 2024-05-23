@@ -1,0 +1,132 @@
+.carousel-principal{
+  margin-top:-48px;
+
+}
+
+.carousel-item {
+  position: relative; /* Establece posición relativa para que los elementos absolutos sean relativos a esto */
+}
+
+.texto-principal-carousel {
+  position: absolute; /* Posición absoluta */
+  top: 50%; /* Posiciona el texto en la mitad vertical del elemento */
+  left: 50%; /* Posiciona el texto en la mitad horizontal del elemento */
+  transform: translate(-50%, -50%); /* Centra el texto en el medio */
+  font-size: 24px; /* Tamaño de letra */
+  background-color: rgba(255, 0, 0, 0.3); /* Color de fondo rojo transparente */
+  padding: 10px; /* Añade espaciado dentro del borde */
+  border: 2px solid white; /* Borde cuadrado rojo */
+  border-radius: 5px; /* Borde redondeado (opcional) */
+  color: white; /* Color del texto */
+}
+.head-parrafo {
+  color: #d5ba7f;
+  font-size: 25px;
+  animation: backInRight;
+  animation-duration: 2s;
+  font-style: italic;
+  font-family: sans-serif;
+}
+.line {
+  width: 1200px;
+  height: 1px;
+
+  background-color: #d5ba7f;
+  border: solid 1px #d5ba7f;
+  margin: 0 20px;
+}.separator {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+.separator-parrafo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: #902729;
+  font-size: 35px;
+  font-style: italic;
+  white-space: nowrap;
+  font-family: sans-serif;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  background-image: url("../../assets/img/reservas.png"); /* Establece la imagen de fondo */
+  background-size: cover; /* Ajusta la imagen para cubrir todo el contenedor */
+  background-position: center; /* Centra la imagen horizontal y verticalmente */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+}
+
+.card-body {
+  padding: 0;
+}
+
+
+
+.card-content {
+  position: relative;
+  z-index: 1;
+  padding: 20px;
+  color: #902729;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+
+.card-title {
+  color: #902729;
+}
+
+.form-control {
+  margin-bottom: 15px;
+}
+
+.btn-primary {
+  background-color: #902729;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #6e1f45;
+}
+
+
+.footer {
+  background-color: #333;
+  color: white;
+  padding: 40px 0;
+}
+
+.footer h5 {
+  color: #d5ba7f;
+}
+
+.footer ul li {
+  list-style: none;
+  margin-bottom: 10px;
+}
+
+.footer a {
+  color: white;
+}
+
+.footer a:hover {
+  color: #d5ba7f;
+}
+
+.list-unstyled a {
+  text-decoration: none;
+}
+.btn-custom {
+  background-color: #902729;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.btn-custom:hover {
+  background-color: #d5ba7f;
+}

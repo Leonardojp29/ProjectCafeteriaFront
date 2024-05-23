@@ -1,0 +1,7 @@
+<div *ngIf="showNavbar && isAdmin">
+  <app-navbar-admin></app-navbar-admin>
+</div>
+<div *ngIf="showNavbar && !isAdmin">
+  <app-navbar></app-navbar>
+</div>
+<router-outlet></router-outlet>

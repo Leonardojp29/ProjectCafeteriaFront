@@ -1,0 +1,49 @@
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-content">
+            <strong><h5 class="card-title text-center mb-4">REGISTRA UN NUEVO PRODUCTO PARA EL MENU</h5></strong>
+            <form (ngSubmit)="registrarMenu()">              
+              <div class="mb-3">
+                <strong><label for="nombre" class="form-label centered-label">Nombre del Nuevo Producto</label></strong>
+                <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="nuevoMenu.nombre" required>
+              </div>
+              <div class="mb-3">
+                <strong><label for="idcategoria" class="form-label centered-label">Categoria</label></strong>
+                <div class="d-flex align-items-center">
+                  <select class="form-select me-2" id="idcategoria" name="idcategoria" [(ngModel)]="nuevoMenu.idcategoria">
+                    <option selected value="0">Seleccione una categoria</option>
+                    <option *ngFor="let categoria of categoria" [value]="categoria.idcategoria">{{ categoria.nombre}}</option>
+                  </select>
+                  <button type="button" class="btn btn-warning" (click)="irACategorias()">Listado de Categorias</button>
+                </div>
+              </div>
+              <div class="mb-3">
+                <strong><label for="precio" class="form-label centered-label">Precio del Producto</label></strong>
+                <input type="text" class="form-control" id="precio" name="precio" [(ngModel)]="nuevoMenu.precio">
+              </div>
+              <div class="mb-3">
+                <strong><label for="descripcion" class="form-label centered-label">Descripcion del Nuevo Producto</label></strong>
+                <textarea class="form-control" id="descripcion" rows="3" name="descripcion" required [(ngModel)]="nuevoMenu.descripcion"></textarea>
+              </div>
+              <div class="mb-3">
+                <strong><label for="imagen" class="form-label centered-label">Imagen del Producto</label></strong>
+                <input type="file" class="form-control" id="imagen" (change)="onFileSelected($event)">
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn btn-registrar btn-custom">Registrar Nuevo Producto</button>
+                <button type="button" class="btn btn-primary btn-custom" (click)="regresar()">Regresar</button>                
+              </div><br>             
+              <div *ngIf="errorRegistro" class="alert alert-danger">
+                {{ errorRegistro }}
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

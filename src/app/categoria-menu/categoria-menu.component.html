@@ -1,0 +1,41 @@
+<br><br><div class="container py-2">
+    <div class="row text-center align-items-center">
+      <div class="head-parrafo">
+        <p>LISTADO DE LAS CATEGORIAS DEL MENU</p>
+      </div>
+    </div>
+  </div>
+  <div class="container py-5 text-center">
+    <a class="btn btn-secondary btn-custom" [routerLink]="'/registrar-categoria-admin'">
+      Agregar una nueva Categoria para el Menu
+    </a>
+  </div>
+  <div class="table-container">
+    <div class="mat-elevation-z8">
+      <table mat-table [dataSource]="dataSource" class="table table-hover">
+        <ng-container matColumnDef="idcategoria">
+          <th mat-header-cell *matHeaderCellDef>ID</th>
+          <td mat-cell *matCellDef="let dato">{{dato.idcategoria}}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="nombre">
+          <th mat-header-cell *matHeaderCellDef>Nombre</th>
+          <td mat-cell *matCellDef="let dato">{{dato.nombre}}</td>
+        </ng-container>  
+  
+        <ng-container matColumnDef="acciones">
+          <th mat-header-cell *matHeaderCellDef colspan="2">Acciones</th>
+          <td mat-cell *matCellDef="let dato" colspan="2">
+            <button class="btn btn-info btn-separado" (click)="irActualizar(dato.idcategoria)">Actualizar</button>
+            <button class="btn btn-danger btn-separado" (click)="eliminarCategoria(dato.idcategoria)">Eliminar</button>
+          </td>
+        </ng-container>
+  
+        <tr mat-header-row *matHeaderRowDef="displayedColumns" class="mat-header-row"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+      <mat-paginator [pageSizeOptions]="pageSizeOptions" showFirstLastButtons></mat-paginator>
+    </div>
+  </div><br><br><br>
+  <router-outlet></router-outlet>
+  

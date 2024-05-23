@@ -1,0 +1,48 @@
+<br><br><div class="container py-2">
+  <div class="row text-center align-items-center">
+    <div class="head-parrafo">
+      <p>LISTADO DE NUESTROS LOCALES</p>
+    </div>
+  </div>
+</div>
+<div class="container py-5 text-center">
+  <a class="btn btn-secondary btn-custom" [routerLink]="'/registrar-locales'">Agregar un nuevo Local</a>
+</div>
+<div class="table-container">
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" class="table table-hover">
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef>ID</th>
+        <td mat-cell *matCellDef="let dato">{{dato.id}}</td>
+      </ng-container>
+      
+      <ng-container matColumnDef="distrito">
+        <th mat-header-cell *matHeaderCellDef>Distrito</th>
+        <td mat-cell *matCellDef="let dato">{{ getNombreDistrito(dato.iddistrito) }}</td>
+      </ng-container>
+      
+      <ng-container matColumnDef="direccion">
+        <th mat-header-cell *matHeaderCellDef>Dirección</th>
+        <td mat-cell *matCellDef="let dato">{{dato.direccion}}</td>
+      </ng-container>
+      
+      <ng-container matColumnDef="horario">
+        <th mat-header-cell *matHeaderCellDef>Horario</th>
+        <td mat-cell *matCellDef="let dato">{{dato.horario}}</td>
+      </ng-container>
+      
+      <ng-container matColumnDef="acciones">
+        <th mat-header-cell *matHeaderCellDef colspan="2">Acciones</th>
+        <td mat-cell *matCellDef="let dato" colspan="2">
+          <button class="btn btn-info btn-separado" (click)="irActualizar(dato.id)">Actualizar</button>
+          <button class="btn btn-danger btn-separado" (click)="eliminarLocales(dato.id)">Eliminar</button>
+        </td>
+      </ng-container>
+      
+      <tr mat-header-row *matHeaderRowDef="displayedColumns" class="mat-header-row"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator [pageSizeOptions]="pageSizeOptions" showFirstLastButtons></mat-paginator>
+  </div>
+</div>
+<router-outlet></router-outlet>

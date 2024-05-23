@@ -1,0 +1,46 @@
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-content">
+            <strong><h5 class="card-title text-center mb-4">ACTUALIZAR PRODUCTO DEL MENU</h5></strong>
+            <form (ngSubmit)="actualizarMenu()">
+              <div class="mb-3">
+                <strong><label for="nombre" class="form-label centered-label">Nombre del Producto *</label></strong>
+                <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="menu.nombre" required>
+              </div>
+              <div class="mb-3">
+                <strong><label for="idcategoria" class="form-label centered-label">Categoria</label></strong>
+                <select class="form-select" id="idcategoria" name="idcategoria" [(ngModel)]="menu.idcategoria" required>
+                  <option disabled [ngValue]="null">Seleccione una Categoria</option>
+                  <option *ngFor="let categoria of categoria" [value]="categoria.idcategoria">{{ categoria.nombre }}</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <strong><label for="precio" class="form-label centered-label">Precio</label></strong>
+                <input type="text" class="form-control" id="precio" name="precio" [(ngModel)]="menu.precio" required>
+              </div>
+              <div class="mb-3">
+                <strong><label for="descripcion" class="form-label centered-label">Descripcion del Producto *</label></strong>
+                <textarea class="form-control" id="descripcion" rows="3" name="descripcion" [(ngModel)]="menu.descripcion" required></textarea>
+              </div>
+              <div class="mb-3">
+                <strong><label for="imagen" class="form-label centered-label">Imagen del Producto</label></strong>
+                <input type="file" class="form-control" id="imagen" (change)="onFileSelected($event)">
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn btn-actualizar btn-custom">Actualizar Producto</button>
+                <button type="button" class="btn btn-primary btn-custom" (click)="regresar()">Regresar</button>
+              </div>
+              <div *ngIf="errorActualizacion" class="alert alert-danger mt-3">
+                {{ errorActualizacion }}
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

@@ -1,0 +1,49 @@
+<div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-body">
+            <div class="card-content">
+              <strong><h5 class="card-title text-center mb-4">ACTUALIZAR USUARIO</h5></strong>
+              <form (ngSubmit)="actualizarUsuario()">              
+                <div class="mb-3">
+                  <label for="nombre" class="form-label centered-label">Nombres *</label>
+                  <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="usuario.nombre" required>
+                </div>
+                <div class="mb-3">
+                    <label for="apellido" class="form-label centered-label">Apellidos *</label>
+                    <input type="text" class="form-control" id="apellido" name="apellido" [(ngModel)]="usuario.apellido" required>
+                  </div>
+                  <div class="mb-3">
+                    <strong><label for="email" class="form-label centered-label">Email *</label></strong>
+                    <input type="text" class="form-control" id="email" name="email" [(ngModel)]="usuario.email" required>
+                  </div>
+                  <div class="mb-3">
+                    <strong><label for="usuario" class="form-label centered-label">User *</label></strong>
+                    <input type="text" class="form-control" id="usuario" name="usuario" [(ngModel)]="usuario.usuario">
+                  </div>
+                  <div class="mb-3">
+                    <strong><label for="password" class="form-label centered-label">Contraseña *</label></strong>
+                    <input type="password" class="form-control" id="password" name="password" [(ngModel)]="usuario.password">
+                  </div>
+                  <div class="mb-3">
+                    <strong><label for="tipoUsuario_ID" class="form-label centered-label">Tipo de Usuario</label></strong>
+                    <select class="form-select" id="tipoUsuario_ID" name="tipoUsuario_ID" [(ngModel)]="usuario.tipoUsuario_ID" required>
+                        <option disabled [ngValue]="null">Seleccione un Tipo de Usuario</option>
+                        <option *ngFor="let tipoUsuario of tipoUsuario" [value]="tipoUsuario.id">{{ tipoUsuario.tipo}}</option>
+                    </select>
+                  </div>                  
+                  <div class="text-center">
+                    <button type="submit" class="btn btn-registrar btn-custom">Actualizar Usuario</button>
+                    <button type="button" class="btn btn-primary btn-custom" (click)="regresar()">Regresar</button>                  
+                  </div>              
+                  <div *ngIf="errorActualizacion" class="alert alert-danger mt-3">
+                    {{ errorActualizacion }}
+                  </div>
+                </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

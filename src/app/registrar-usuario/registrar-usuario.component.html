@@ -1,0 +1,39 @@
+<div class="background-image">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <form class="login-form" (ngSubmit)="registrarUsuario()">
+          <h2 class="mb-4">Registrarse</h2>
+          <div class="mb-3">
+            <strong><label for="nombre" class="form-label">Tu Nombre *</label></strong>
+            <input type="text" class="form-control" id="nombre" name="nombre"  [(ngModel)]="nuevoUsuario.nombre" required="Campo Requerido">
+          </div>
+          <div class="mb-3">
+            <strong><label for="apellido" class="form-label">Tu Apellido*</label></strong>
+            <input type="text" class="form-control" id="apellido" name="apellido" [(ngModel)]="nuevoUsuario.apellido">
+          </div>
+          <div class="mb-3">
+            <strong><label for="email" class="form-label">Email *</label></strong>
+            <input type="email" class="form-control" id="email"  name="email" [(ngModel)]="nuevoUsuario.email">
+          </div>
+          <div class="mb-3">
+            <strong><label for="usuario" class="form-label">Usuario*</label></strong>
+            <input type="text" class="form-control" id="usuario" name="usuario" [(ngModel)]="nuevoUsuario.usuario">
+          </div>
+          <div class="mb-3">
+            <strong><label for="contraseña" class="form-label">Contraseña *</label></strong>
+            <input type="password" class="form-control" id="contraseña" name="contraseña" [(ngModel)]="nuevoUsuario.password">
+          </div>      
+          <button type="submit" class="btn btn-red btn-block btn-oval custom-btn">Registrar</button>
+          <a class="btn btn-red btn-block btn-oval custom-btn1" routerLink="login">Ir a Iniciar Sesion</a><br><br>
+          <div *ngIf="mensajeConfirmacion" class="alert alert-success">
+            {{ mensajeConfirmacion }}
+          </div>
+          <div *ngIf="mensajeError" class="alert alert-danger">
+            {{ mensajeError }}
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
